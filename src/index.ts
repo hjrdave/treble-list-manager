@@ -1,3 +1,5 @@
-import TrebleModule from './treble-module';
+import TrebleListManager from './treble-list-manager';
+import {TrebleLM} from './interfaces';
 
-export default TrebleModule;
+export {TrebleLM};
+export default TrebleListManager;

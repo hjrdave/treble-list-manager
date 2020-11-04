@@ -2,10 +2,10 @@
     Exported Interfaces for module
 */
 import {TrebleGSM} from 'treble-gsm';
-export declare namespace TrebleModule{
+export declare namespace TrebleLM{
 
     export interface DispatcherOptions extends TrebleGSM.DispatcherOptions{
-        someOption?: boolean
+        //someOption?: boolean
     }
     export interface Dispatchers{
 
