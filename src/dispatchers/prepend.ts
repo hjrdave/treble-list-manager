@@ -24,4 +24,4 @@ const prepend: IPrepend = (dispatch, action, dispatchValue, options) => {
         }
     })
 }
-export default orderBy;
+export default prepend;

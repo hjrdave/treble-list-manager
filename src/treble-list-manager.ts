@@ -5,7 +5,8 @@
 
 import {createModule} from 'treble-gsm';
 import {} from './reducer-actions';
-import {} from './dispatchers';
+import {append, edit, orderBy, prepend, remove, removeBatch} from './dispatchers';
+import {appendState, batchRemoveState, editState, orderState, prependState, removeState} from './reducer-actions';
 
 const TrebleListManager = createModule({
 
@@ -23,12 +24,22 @@ const TrebleListManager = createModule({
 
         //dispatchers to add
         dispatchers: {
-           // 'exampleDispatcher': dispatchSomething
+           'append': append,
+           'edit': edit,
+           'orderBy': orderBy,
+           'prepend': prepend,
+           'remove': remove,
+           'removeBatch': removeBatch
         },
 
         //reducer actions to add
         reducerActions: {
-            //'exampleReducerAction': runSomeReducerAction
+            'TrebleLMAppendState': appendState,
+            'removeBatchTrebleLM': batchRemoveState,
+            'editStateTrebleLM': editState,
+            'orderByTrebleLM': orderState,
+            'prependTrebleLM': prependState,
+            'removeTrebleLM': removeState,
         }
         
     },

@@ -8,7 +8,7 @@ interface IOrderBy{
     (
         dispatch: (data: TrebleGSM.DispatchPayload) => void,
         action: string,
-        targerProp: string,
+        targertProp: string,
         orderType: 'asc' | 'desc',
         options?: TrebleGSM.DispatcherOptions
     ): void

@@ -18,7 +18,7 @@ interface IGenerateStaticKeys {
     }[] | null
 }
 
-const generateStaticKeys: IGenerateStaticKeys = (dispatchValue, staticKeysMiddleware) => {
+export const generateStaticKeys: IGenerateStaticKeys = (dispatchValue, staticKeysMiddleware) => {
 
     if (staticKeysMiddleware && dispatchValue !== null) {
         let dispatchValueWithKeys: { trebleKey: number, [key: string]: any }[] = dispatchValue?.map(
@@ -30,5 +30,3 @@ const generateStaticKeys: IGenerateStaticKeys = (dispatchValue, staticKeysMiddle
     }
     return dispatchValue;
 }
-
-export default generateStaticKeys;
