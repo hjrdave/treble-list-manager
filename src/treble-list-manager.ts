@@ -4,9 +4,10 @@
 */
 
 import {createModule} from 'treble-gsm';
-import {} from './reducer-actions';
+import reducerActionKeys from './reducer-action-keys';
 import {append, edit, orderBy, prepend, remove, removeBatch} from './dispatchers';
 import {appendState, batchRemoveState, editState, orderState, prependState, removeState} from './reducer-actions';
+import { generateStateKeys } from './middleware';
 
 const TrebleListManager = createModule({
 
@@ -17,7 +18,7 @@ const TrebleListManager = createModule({
     //extendStore: TrebleModuleStore,
 
     //Takes an array of feature keys (These can be used as flags to allow certain Reducer Action functionality)
-    //featureKeys: ['enableSomething', 'doSomething'],
+    featureKeys: ['keys'],
 
     //extend the SubscribeAPI
     subscribeAPI: {
@@ -34,16 +35,18 @@ const TrebleListManager = createModule({
 
         //reducer actions to add
         reducerActions: {
-            'TrebleLMAppendState': appendState,
-            'removeBatchTrebleLM': batchRemoveState,
-            'editStateTrebleLM': editState,
-            'orderByTrebleLM': orderState,
-            'prependTrebleLM': prependState,
-            'removeTrebleLM': removeState,
+            [reducerActionKeys.appendState]: appendState,
+            [reducerActionKeys.removeBatchState]: batchRemoveState,
+            [reducerActionKeys.editState]: editState,
+            [reducerActionKeys.orderByState]: orderState,
+            [reducerActionKeys.prependState]: prependState,
+            [reducerActionKeys.removeState]: removeState,
         }
         
     },
-
+    middleware: {
+        process: (data) => generateStateKeys(data)
+    }
     
 
 });

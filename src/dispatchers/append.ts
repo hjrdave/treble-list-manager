@@ -3,6 +3,7 @@
     - Appends state object to object array
 */
 import {TrebleGSM} from 'treble-gsm';
+import reducerActionKeys from '../reducer-action-keys';
 
 interface IAppend{
     (
@@ -17,7 +18,7 @@ const append: IAppend = (dispatch, action, dispatchValue, options) => {
     dispatch({
         type: action,
         [action]: dispatchValue,
-        reducerAction: 'TrebleLMAppendState',
+        reducerAction: reducerActionKeys.appendState,
         options: {
             ...options
         }

@@ -3,6 +3,7 @@
     - Sorts 
 */
 import {TrebleGSM} from 'treble-gsm';
+import reducerActionKeys from '../reducer-action-keys';
 
 interface IOrderBy{
     (
@@ -19,7 +20,7 @@ const orderBy: IOrderBy = (dispatch, action, targetProp, orderType, options) => 
     dispatch({
         type: action,
         [action]: targetProp,
-        reducerAction: 'orderByTrebleLM',
+        reducerAction: reducerActionKeys.orderByState,
         orderType: orderType,
         options: {
             ...options

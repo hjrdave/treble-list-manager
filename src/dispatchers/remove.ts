@@ -3,6 +3,7 @@
     - method for removing an object from an array.
 */
 import {TrebleGSM} from 'treble-gsm';
+import reducerActionKeys from '../reducer-action-keys';
 
 interface IRemove{
     (
@@ -19,7 +20,7 @@ const remove: IRemove = (dispatch, action, dispatchValue, options) => {
     dispatch({
         type: action,
         [action]: dispatchValue,
-        reducerAction: 'removeTrebleLM',
+        reducerAction: reducerActionKeys.removeState,
         options: {
             ...options
         }

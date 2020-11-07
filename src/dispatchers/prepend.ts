@@ -3,6 +3,7 @@
     - prepends state object to object array 
 */
 import {TrebleGSM} from 'treble-gsm';
+import reducerActionKeys from '../reducer-action-keys';
 
 interface IPrepend{
     (
@@ -18,7 +19,7 @@ const prepend: IPrepend = (dispatch, action, dispatchValue, options) => {
     dispatch({
         type: action,
         [action]: dispatchValue,
-        reducerAction: 'prependTrebleLM',
+        reducerAction: reducerActionKeys.prependState,
         options: {
             ...options
         }
