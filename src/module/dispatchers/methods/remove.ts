@@ -3,7 +3,7 @@
     - method for removing an object from an array.
 */
 import {TrebleGSM} from 'treble-gsm';
-import reducerActionKeys from '../../reducer-action-keys';
+import reducerActionKeys from '../../reducer-actions/keys';
 
 interface IRemove{
     (
