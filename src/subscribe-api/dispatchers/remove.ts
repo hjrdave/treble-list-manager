@@ -1,11 +1,11 @@
 /*
-    Prepend state
-    - prepends state object to object array 
+    Remove
+    - method for removing an object from an array.
 */
 import {TrebleGSM} from 'treble-gsm';
-import reducerActionKeys from '../reducer-action-keys';
+import reducerActionKeys from '../../reducer-action-keys';
 
-interface IPrepend{
+interface IRemove{
     (
         dispatch: (data: TrebleGSM.DispatchPayload) => void,
         action: string,
@@ -14,15 +14,17 @@ interface IPrepend{
     ): void
 }
 
-const prepend: IPrepend = (dispatch, action, dispatchValue, options) => {
-    
+const remove: IRemove = (dispatch, action, dispatchValue, options) => {
+
+  
     dispatch({
         type: action,
         [action]: dispatchValue,
-        reducerAction: reducerActionKeys.prependState,
+        reducerAction: reducerActionKeys.removeState,
         options: {
             ...options
         }
     })
+ 
 }
-export default prepend;
+export default remove;

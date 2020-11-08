@@ -1,13 +1,12 @@
 /*
-    TrebleGSM Module
+    Treble List Manager Module
     - Entry point for module data
 */
 
 import {createModule} from 'treble-gsm';
 import reducerActionKeys from './reducer-action-keys';
-import {append, edit, orderBy, prepend, remove, removeBatch} from './dispatchers';
-import {appendState, batchRemoveState, editState, orderState, prependState, removeState} from './reducer-actions';
-import { generateStateKeys } from './middleware';
+import generateStaticKeys from './middleware/generate-static-keys';
+import {appendState, batchRemoveState, editState, orderState, prependState, removeState, append, edit, orderBy, prepend, removeBatch, remove} from './subscribe-api';
 
 const TrebleListManager = createModule({
 
@@ -19,6 +18,11 @@ const TrebleListManager = createModule({
 
     //Takes an array of feature keys (These can be used as flags to allow certain Reducer Action functionality)
     featureKeys: ['keys'],
+
+    //middleware
+    middleware: {
+        process: generateStaticKeys
+    },
 
     //extend the SubscribeAPI
     subscribeAPI: {
@@ -43,11 +47,7 @@ const TrebleListManager = createModule({
             [reducerActionKeys.removeState]: removeState,
         }
         
-    },
-    middleware: {
-        process: (data) => generateStateKeys(data)
     }
-    
 
 });
 

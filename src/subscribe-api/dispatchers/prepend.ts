@@ -1,11 +1,11 @@
 /*
-    Append state
-    - Appends state object to object array
+    Prepend state
+    - prepends state object to object array 
 */
 import {TrebleGSM} from 'treble-gsm';
-import reducerActionKeys from '../reducer-action-keys';
+import reducerActionKeys from '../../reducer-action-keys';
 
-interface IAppend{
+interface IPrepend{
     (
         dispatch: (data: TrebleGSM.DispatchPayload) => void,
         action: string,
@@ -14,14 +14,15 @@ interface IAppend{
     ): void
 }
 
-const append: IAppend = (dispatch, action, dispatchValue, options) => {
+const prepend: IPrepend = (dispatch, action, dispatchValue, options) => {
+    
     dispatch({
         type: action,
         [action]: dispatchValue,
-        reducerAction: reducerActionKeys.appendState,
+        reducerAction: reducerActionKeys.prependState,
         options: {
             ...options
         }
     })
 }
-export default append;
+export default prepend;

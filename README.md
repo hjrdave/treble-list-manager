@@ -1,6 +1,8 @@
 
 ## Treble List Manager
 
+#Do not use this package. It is still under development.
+
 A list management module for TrebleGSM. Manage lists with confidence!
 
 

@@ -3,7 +3,7 @@
     - Appends state object to object array
 */
 import {TrebleGSM} from 'treble-gsm';
-import reducerActionKeys from '../reducer-action-keys';
+import reducerActionKeys from '../../reducer-action-keys';
 
 interface IEdit{
     (

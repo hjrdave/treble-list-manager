@@ -1,11 +1,11 @@
 /*
-    Remove
-    - method for removing an object from an array.
+    Append state
+    - Appends state object to object array
 */
 import {TrebleGSM} from 'treble-gsm';
-import reducerActionKeys from '../reducer-action-keys';
+import reducerActionKeys from '../../reducer-action-keys';
 
-interface IRemove{
+interface IAppend{
     (
         dispatch: (data: TrebleGSM.DispatchPayload) => void,
         action: string,
@@ -14,17 +14,14 @@ interface IRemove{
     ): void
 }
 
-const remove: IRemove = (dispatch, action, dispatchValue, options) => {
-
-  
+const append: IAppend = (dispatch, action, dispatchValue, options) => {
     dispatch({
         type: action,
         [action]: dispatchValue,
-        reducerAction: reducerActionKeys.removeState,
+        reducerAction: reducerActionKeys.appendState,
         options: {
             ...options
         }
-    })
- 
+    });
 }
-export default remove;
+export default append;

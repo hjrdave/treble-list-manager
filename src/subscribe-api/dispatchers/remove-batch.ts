@@ -3,7 +3,7 @@
     - method for removing a group of list items at a time.
 */
 import {TrebleGSM} from 'treble-gsm';
-import reducerActionKeys from '../reducer-action-keys';
+import reducerActionKeys from '../../reducer-action-keys';
 
 interface IRemoveBatch{
     (

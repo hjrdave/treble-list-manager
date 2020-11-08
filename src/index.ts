@@ -1,4 +1,4 @@
-import TrebleListManager from './treble-list-manager';
+import TrebleListManager from './module';
 import {TrebleLM} from './interfaces';
 
 export {TrebleLM};

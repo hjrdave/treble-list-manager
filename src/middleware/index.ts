@@ -1,3 +1,3 @@
-import generateStateKeys from './generate-static-keys';
+import generateStaticKeys from './generate-static-keys';
 
-export { generateStateKeys };
+export { generateStaticKeys };
