@@ -1,13 +1,12 @@
 {
   "name": "treble-list-manager",
-  "version": "1.0.0_alpha.1",
+  "version": "1.0.0-alpha.1",
   "description": "A list management module for TrebleGSM",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "start": "babel --watch src --out-dir lib --extensions .ts,.tsx",
     "build": "babel src --out-dir lib --extensions .ts,.tsx && tsc --emitDeclarationOnly",
-    "publish": "npm publish",
     "tsc:watch": "tsc --watch --emitDeclarationOnly"
   },
   "files": [
