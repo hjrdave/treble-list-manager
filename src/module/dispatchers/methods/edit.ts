@@ -18,13 +18,13 @@ interface IEdit {
 const edit: IEdit = (dispatch, action, dispatchValue, options) => {
     try {
         if (typeof action !== 'string') {
-            throw TypeError('Action prop must be a string.');
+            throw TypeError('Action prop must be a string');
         }
         if (typeof dispatchValue !== 'object' && Array.isArray(dispatchValue)) {
-            throw TypeError('Dispatch value property must be an object.');
+            throw TypeError('Dispatch value property must be an object');
         }
         if (dispatchValue.trebleKey === undefined) {
-            throw Error(`${action} - features.keys must be set to true.`);
+            throw Error(`${action} - features.keys must be set to true`);
         }
 
         dispatch({

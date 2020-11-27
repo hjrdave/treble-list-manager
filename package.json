@@ -1,6 +1,6 @@
 {
   "name": "treble-list-manager",
-  "version": "0.0.0",
+  "version": "1.0.0_alpha.1",
   "description": "A list management module for TrebleGSM",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
