@@ -31,7 +31,7 @@ const orderBy: IOrderBy = (dispatch, action, targetProp, orderType, options) => 
         dispatch({
             type: action,
             [action]: targetProp,
-            reducerAction: reducerActionKeys.orderByState,
+            reducerAction: reducerActionKeys.orderBy,
             orderType: orderType,
             options: {
                 ...options

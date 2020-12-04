@@ -26,7 +26,7 @@ const prepend: IPrepend = (dispatch, action, dispatchValue, options) => {
         dispatch({
             type: action,
             [action]: dispatchValue,
-            reducerAction: reducerActionKeys.prependState,
+            reducerAction: reducerActionKeys.prepend,
             options: {
                 ...options
             }

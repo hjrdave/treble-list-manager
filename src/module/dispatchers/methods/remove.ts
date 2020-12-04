@@ -27,7 +27,7 @@ const remove: IRemove = (dispatch, action, dispatchValue, options) => {
         dispatch({
             type: action,
             [action]: dispatchValue,
-            reducerAction: reducerActionKeys.removeState,
+            reducerAction: reducerActionKeys.remove,
             options: {
                 ...options
             }

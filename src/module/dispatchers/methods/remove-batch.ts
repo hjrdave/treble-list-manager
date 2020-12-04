@@ -25,7 +25,7 @@ const removeBatch: IRemoveBatch = (dispatch, action, dispatchValue, options) => 
         dispatch({
             type: action,
             [action]: dispatchValue,
-            reducerAction: reducerActionKeys.removeBatchState,
+            reducerAction: reducerActionKeys.removeBatch,
             options: {
                 ...options
             }

@@ -4,15 +4,15 @@
 */
 
 //namespaces reducer action keys to help prevent module name collisions
-const nameSpace = 'TrebleLM';
+const nameSpace = 'TREBLE_LIST_MANAGER_';
 
 const reducerActionKeys = {
-    appendState: `${nameSpace}AppendState`,
-    removeBatchState: `${nameSpace}RemoveBatch`,
-    editState: `${nameSpace}EditState`,
-    orderByState: `${nameSpace}OrderBy`,
-    prependState: `${nameSpace}Prepend`,
-    removeState: `${nameSpace}Remove`
+    append: `${nameSpace}append`,
+    removeBatch: `${nameSpace}remove`,
+    edit: `${nameSpace}edit`,
+    orderBy: `${nameSpace}orderBy`,
+    prepend: `${nameSpace}prepend`,
+    remove: `${nameSpace}remove`
 }
 
 export default reducerActionKeys;

@@ -4,6 +4,7 @@ import editState from './methods/edit-state';
 import orderState from './methods/order-state';
 import prependState from './methods/prepend-state';
 import removeState from './methods/remove-state';
+import reducerActionKeys from './keys';
 
 export {
     appendState,
@@ -11,5 +12,6 @@ export {
     editState,
     orderState,
     prependState,
-    removeState
+    removeState,
+    reducerActionKeys
 }

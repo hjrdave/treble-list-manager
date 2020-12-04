@@ -25,7 +25,7 @@ const append: IAppend = (dispatch, action, dispatchValue, options) => {
         dispatch({
             type: action,
             [action]: dispatchValue,
-            reducerAction: reducerActionKeys.appendState,
+            reducerAction: reducerActionKeys.append,
             options: {
                 ...options
             }
