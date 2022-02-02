@@ -56,9 +56,7 @@
     "rimraf": "^2.6.2",
     "vsts": "^2.1.2"
   },
-  "dependencies": {},
-  "peerDependencies": {
-    "react": "^16.13.x",
-    "treble-gsm": "^4.0.x"
+  "dependencies": {
+    "@types/react": "^17.0.38"
   }
 }

@@ -10,23 +10,23 @@ interface IRemove {
     (
         dispatch: (data: TrebleGSM.DispatchPayload) => void,
         action: string,
-        dispatchValue: any,
+        predicate: (storeState: { [key: string]: any }) => boolean,
         options?: TrebleGSM.DispatcherOptions
     ): void
 }
 
-const remove: IRemove = (dispatch, action, dispatchValue, options) => {
+const remove: IRemove = (dispatch, action, predicate, options) => {
 
     try {
         if (typeof action !== 'string') {
             throw TypeError('action prop must be a string');
         }
-        if (typeof dispatchValue !== 'object' && Array.isArray(dispatchValue)) {
-            throw TypeError('dispatch value must be an object')
+        if (typeof predicate !== 'function') {
+            throw TypeError('predicate must be a function')
         }
         dispatch({
             type: action,
-            [action]: dispatchValue,
+            [action]: predicate,
             reducerAction: reducerActionKeys.remove,
             options: {
                 ...options
