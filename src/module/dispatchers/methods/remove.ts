@@ -20,7 +20,7 @@ const remove: IRemove = (dispatch, action, dispatchValue, options) => {
         if (typeof action !== 'string') {
             throw TypeError('action prop must be a string');
         }
-        if (typeof dispatchValue !== 'function' && typeof dispatchValue !== 'object') {
+        if (typeof dispatchValue !== 'function' && typeof dispatchValue !== 'object' && Array.isArray(dispatchValue)) {
             throw TypeError('dispatchValue must be an object or a predicate function');
         }
         if (typeof dispatchValue === 'object' && (dispatchValue as any)?.trebleKey === undefined) {

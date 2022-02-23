@@ -10,7 +10,7 @@ interface IEdit {
     (
         dispatch: (data: TrebleGSM.DispatchPayload) => void,
         action: string,
-        dispatchValue: any,
+        dispatchValue: (storeState: { [key: string]: any, trebleKey: number }) => ({ [key: string]: any, trebleKey: number } | null) | { [key: string]: any, trebleKey: number },
         options?: TrebleGSM.DispatcherOptions
     ): void
 }
@@ -18,13 +18,13 @@ interface IEdit {
 const edit: IEdit = (dispatch, action, dispatchValue, options) => {
     try {
         if (typeof action !== 'string') {
-            throw TypeError('Action prop must be a string');
+            throw TypeError('action prop must be a string');
         }
-        if (typeof dispatchValue !== 'object' && Array.isArray(dispatchValue)) {
-            throw TypeError('Dispatch value property must be an object');
+        if (typeof dispatchValue !== 'function' && typeof dispatchValue !== 'object' && Array.isArray(dispatchValue)) {
+            throw TypeError('dispatchValue must be an object or a predicate function');
         }
-        if (dispatchValue.trebleKey === undefined) {
-            throw Error(`${action} - features.keys must be set to true`);
+        if (typeof dispatchValue === 'object' && (dispatchValue as any)?.trebleKey === undefined) {
+            throw TypeError('dispatchValue must have a trebleKey property that matches the trebleKey property in the Store');
         }
 
         dispatch({
